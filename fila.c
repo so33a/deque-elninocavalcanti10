@@ -20,7 +20,7 @@ FILA novaFila() {
   return f;
 }
 
-void inserir(FILA f, int e) {
+void inserir_Final(FILA f, int e) {
   if(f->maisAntigo == NULL) {
     f->maisAntigo = f->maisNovo = novoNo(e, NULL);
   } else {
@@ -29,14 +29,39 @@ void inserir(FILA f, int e) {
   }
 }
 
-int remover(FILA f){
+void inserir_inicio(FILA f, int e) {
+  if(f->maisAntigo == NULL) {
+    f->maisAntigo = f->maisNovo = novoNo(e, NULL);
+  } else {
+    f->maisAntigo = novoNo(e, f->maisAntigo);
+  }
+}
+
+int remover_Inicio(FILA f){
   int x;
   link t;
   if(filaVazia(f)){
     printf ("Erro, a fila esta vazia\n");
     return 0;
   }
-  
+  x = f->maisAntigo->item;
+  t = f->maisAntigo;
+  f->maisAntigo = f->maisAntigo->next;
+ 
+  if(f->maisAntigo == NULL)
+    f->maisNovo = NULL;
+
+  free(t);
+  return x;
+}
+
+int remover_final(FILA f){
+  int x;
+  link t;
+  if(filaVazia(f)){
+    printf ("Erro, a fila esta vazia\n");
+    return 0;
+  }
   x = f->maisAntigo->item;
   t = f->maisAntigo;
   f->maisAntigo = f->maisAntigo->next;
