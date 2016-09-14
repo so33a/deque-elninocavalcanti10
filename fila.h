@@ -17,7 +17,7 @@ FILA novaFila();
 void inserir_Final(FILA f, int e);
 void inserir_inicio(FILA f, int e);
 int remover_Inicio(FILA f);
-int remover_final(FILA f);
+int remover_Final(FILA f);
 void imprimirFila(FILA f);
 void destroiFila(FILA f);
 int filaVazia(FILA f); 
