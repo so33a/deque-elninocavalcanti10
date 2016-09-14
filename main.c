@@ -8,12 +8,15 @@ int main () {
   inserir_Final(alunos, 3);
   inserir_Final(alunos, 10);
   inserir_inicio(alunos, 1);
+  inserir_inicio(alunos, 1);
+  inserir_inicio(alunos, 7);
+  inserir_inicio(alunos, 4);
 
   imprimirFila(alunos);
-
+  remover_Final(alunos);
   while(!filaVazia(alunos))
     printf ("removido: %d \n", remover_Inicio(alunos));
-
+    
 
   inserir_Final(alunos, 10);
   inserir_Final(alunos, 32);
